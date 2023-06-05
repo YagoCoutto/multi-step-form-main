@@ -18,110 +18,173 @@
     <!-- Sidebar start -->
 
     <div id="sidebar">
-
-      <p>Step 1</p>
-      <strong>Your info</strong>
-      <p>Step 2</p>
-      <strong>Select plan</strong>
-      <p>Step 3</p>
-      <strong>Add-ons</strong>
-      <p>Step 4</p>
-      <strong>Summary</strong>
+      <div class="sidebar-step">
+        <h4>1</h4>
+        <div>
+          <p>Step 1</p>
+          <strong>Your info</strong>
+        </div>
+      </div>
+      <div class="sidebar-step">
+        <h4>2</h4>
+        <div>
+          <p>Step 2</p>
+          <strong>Select plan</strong>
+        </div>
+      </div>
+      <div class="sidebar-step">
+        <h4>3</h4>
+        <div>
+          <p>Step 3</p>
+          <strong>Add-ons</strong>
+        </div>
+      </div>
+      <div class="sidebar-step">
+        <h4>4</h4>
+        <div>
+          <p>Step 4</p>
+          <strong>Summary</strong>
+        </div>
+      </div>
     </div>
 
     <!-- Sidebar end -->
 
     <!-- Step 1 start -->
 
-    <section class="main" id="step-01">
+    <section class="main-step" id="step-01">
       <h1>Personal info</h1>
       <p>Please provide your name, email address, and phone number.</p>
-      <label for="name">Name</label>
-      <input type="text">e.g. Stephen King</input>
-      <label for="email">Email Address</label>
-      <input type="email">e.g. stephenking@lorem.com</input>
-      <label for="phone">Phone Number</label>
-      <input type="tel">e.g. +1 234 567 890</input>
-      <button>Next Step</button>
+      <label for="name">Name <span>This field is required</span></label>
+      <input type="text" placeholder="e.g. Stephen King" id="input-name"></input>
+      <label for="email">Email Address <span>This field is required</span></label>
+      <input type="email" placeholder="e.g. stephenking@lorem.com" id="input-email"></input>
+      <label for="phone">Phone Number <span>This field is required</span></label>
+      <input type="tel" placeholder="e.g. +1 234 567 890" id="input-cel"></input>
+      <div class="main-btt">
+        <button class="btt-next">Next Step</button>
+      </div>
     </section>
 
     <!-- Step 1 end -->
 
     <!-- Step 2 start -->
 
-    <section class="main" id="step-02">
+    <section class="main-step" id="step-02">
       <h1>Select your plan</h1>
       <p>You have the option of monthly or yearly billing.</p>
-      <div class="plan">
-        <img src="assets/images/icon-arcade.svg" alt="Arcade">
-        <strong>Arcade</strong>
-        <p>$9/mo</p>
+      <div id="main-plan">
+        <div class="plan">
+          <img src="assets/images/icon-arcade.svg" alt="Arcade">
+          <strong>Arcade</strong>
+          <p>$9/mo</p>
+        </div>
+        <div class="plan">
+          <img src="assets/images/icon-advanced.svg" alt="Advanced">
+          <strong>Advanced</strong>
+          <p>$12/mo</p>
+        </div>
+        <div class="plan">
+          <img src="assets/images/icon-pro.svg" alt="icon">
+          <strong>Pro</strong>
+          <p>$15/mo</p>
+        </div>
       </div>
-      <div class="plan">
-        <img src="assets/images/icon-advanced.svg" alt="Advanced">
-        <strong>Advanced</strong>
-        <p>$12/mo</p>
-      </div>
-      <div class="plan">
-        <img src="assets/images/icon-pro.svg" alt="icon">
-        <strong>Pro</strong>
-        <p>$15/mo</p>
-      </div>
-      <div class="month-yearly">
+      <div id="month-yearly">
+
         <strong>Monthly</strong>
-        <strong>Yearly</strong>
+
+        <div class="switch__container">
+          <input id="switch-shadow" class="switch switch--shadow" type="checkbox">
+          <label for="switch-shadow"></label>
+        </div>
+
+        <strong id="yearly">Yearly</strong>
+
       </div>
-      <button>Go Back</button>
-      <button>Next Step</button>
+      <div class="main-btt">
+        <button class="btt-back">Go Back</button>
+        <button class="btt-next">Next Step</button>
+      </div>
     </section>
 
     <!-- Step 2 end -->
 
     <!-- Step 3 start -->
 
-    <section class="main" id="step-03">
+    <section class="main-step" id="step-03">
       <h1>Pick add-ons</h1>
       <p>Add-ons help enhance your gaming experience.</p>
       <div class="add-ons">
         <input type="checkbox" name="Online" id="">
-        <strong>Online service</strong>
-        <p>Access to multiplayer games</p>
+        <div class="align-column-ons">
+          <strong>Online service</strong>
+          <p>Access to multiplayer games</p>
+        </div>
         <p>+$1/mo</p>
       </div>
       <div class="add-ons">
         <input type="checkbox" name="Larger" id="">
-        <strong>Larger storage</strong>
-        <p>Extra 1TB of cloud save</p>
+        <div class="align-column-ons">
+          <strong>Larger storage</strong>
+          <p>Extra 1TB of cloud save</p>
+        </div>
         <p>+$2/mo</p>
       </div>
       <div class="add-ons">
         <input type="checkbox" name="Customizable" id="">
-        <strong>Customizable Profile</strong>
-        <p>Custom theme on your profile</p>
+        <div class="align-column-ons">
+          <strong>Customizable Profile</strong>
+          <p>Custom theme on your profile</p>
+        </div>
         <p>+$2/mo</p>
       </div>
-      <button>Go Back</button>
-      <button>Next Step</button>
+      <div class="main-btt">
+        <button class="btt-back">Go Back</button>
+        <button class="btt-next">Next Step</button>
+      </div>
     </section>
 
     <!-- Step 3 end -->
 
     <!-- Step 4 start -->
 
-    <section class="main" id="step-04">
+    <section class="main-step" id="step-04">
       <h1>Finishing up</h1>
       <p>Double-check everything looks OK before confirming.</p>
-      <div><!-- Dynamically add subscription and add-on selections here --></div>
-      <p>Total (per month/year)</p>
-      <button>Go Back</button>
-      <button>Confirm</button>
+      <div id="add-subscription"><!-- Dynamically add subscription and add-on selections here -->
+        <div class="content-subscription">
+          <div id="change">
+            <strong>Arcade (<span>Yearly</span>)</strong>
+            <a href="#">Change</a>
+          </div>
+          <strong>$90/yr</strong>
+        </div>
+        <hr>
+        <div class="content-subscription">
+          <p>Online service</p>
+          <p class="p-value">+$10/yr</p>
+        </div>
+        <div class="content-subscription">
+          <p>Larger storage</p>
+          <p class="p-value">+$20/yr</p>
+        </div>
+      </div>
+      <div id="tot">
+        <p>Total (per month/year)</p>
+        <h3>$120/yr</h3>
+      </div>
+      <div class="main-btt">
+        <button class="btt-back">Go Back</button>
+        <button class="btt-next">Next Step</button>
+      </div>
     </section>
 
     <!-- Step 4 end -->
 
     <!-- Step 5 start -->
-    <section class="main" id="step-05">
-      <img src="assets/images/icon-thank-you.svg" alt="">
+    <section class="main-step" id="step-05">
+      <div id="img"></div>
       <h1>Thank you!</h1>
       <p>
         Thanks for confirming your subscription! We hope you have fun
@@ -132,7 +195,7 @@
 
     <!-- Step 5 end -->
   </main>
-
+<script src="src/step_01.js"></script>
 </body>
 
 </html>

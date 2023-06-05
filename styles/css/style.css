@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: var(--Ubuntu);
 }
 
 :root {
@@ -15,10 +17,11 @@
   --Magnolia: hsl(217, 100%, 97%);
   --Alabaster: hsl(231, 100%, 99%);
   --White: hsl(0, 0%, 100%);
+  --Ubuntu: "Ubuntu", sans-serif;
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,30 +31,354 @@ body {
 main {
   width: 900px;
   height: 600px;
+  padding: 20px;
   display: flex;
   align-items: center;
   flex-direction: row;
+  border-radius: 12px;
   background-color: white;
+  box-shadow: 0px 10px 10px 0px var(--Pastel-blue);
 }
 main #sidebar {
   width: 274px;
   height: 568px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-right: 70px;
+  flex-direction: column;
   background-image: url("/assets/images/bg-sidebar-desktop.svg");
 }
-main #step-01 {
+main #sidebar > .sidebar-step {
+  width: 80%;
+  margin: 15px 15px 15px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: var(--White);
+  text-transform: uppercase;
+  font-size: 13px;
+}
+main #sidebar > .sidebar-step h4 {
+  width: 50px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 80%;
+  border: 1px solid var(--White);
+}
+main #sidebar > .sidebar-step div {
+  width: 100%;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+main #sidebar > .sidebar-step div p {
+  color: var(--Light-gray);
+  margin-bottom: 5px;
+}
+main #sidebar > .sidebar-step div strong {
+  letter-spacing: 1.5px;
+}
+main .main-step {
+  width: 450px;
+  height: 568px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 45px;
+}
+main .main-step h1 {
+  font-size: 2rem;
+  color: var(--Marine-blue);
+}
+main .main-step p {
+  font-size: 1rem;
+  margin: 10px 0 40px 0;
+  color: var(--Cool-gray);
+}
+main .main-step strong {
+  color: var(--Marine-blue);
+}
+main .main-step button {
+  cursor: pointer;
+  width: 110px;
+  height: 40px;
+  border: none;
+  color: var(--White);
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: var(--Marine-blue);
+}
+main .main-step hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--Light-gray);
+  margin: 1em 0;
+  padding: 0;
+}
+main .main-step .main-btt {
+  position: sticky;
+  top: 590px;
+  display: flex;
+  flex-direction: row;
+  background-color: 0;
+}
+main .main-step .main-btt .btt-back {
+  position: absolute;
+  left: -30px;
+  color: var(--Cool-gray);
+  background-color: unset;
+}
+main .main-step .main-btt .btt-next {
+  position: relative;
+  left: 340px;
+}
+main #step-01 label {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  font-weight: 300;
+  color: var(--Marine-blue);
+  display: flex;
+  justify-content: space-between;
+}
+main #step-01 label span {
   display: none;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: red;
+}
+main #step-01 input {
+  cursor: pointer;
+  height: 45px;
+  padding: 10px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--Light-gray);
+}
+main #step-01 input:focus {
+  color: var(--Marine-blue);
+  outline: 0px;
+  border: 1px solid var(--Marine-blue);
 }
 main #step-02 {
   display: none;
 }
+main #step-02 #main-plan {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+main #step-02 #main-plan .plan {
+  cursor: pointer;
+  width: 135px;
+  height: 153px;
+  display: flex;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--Light-gray);
+  flex-direction: column;
+}
+main #step-02 #main-plan .plan img {
+  width: 40px;
+  height: 40px;
+}
+main #step-02 #main-plan .plan strong {
+  position: relative;
+  top: 45px;
+  color: var(--Marine-blue);
+}
+main #step-02 #main-plan .plan p {
+  position: relative;
+  top: 37px;
+  font-size: 0.9rem;
+}
+main #step-02 #main-plan .plan:hover {
+  border: 1.2px solid var(--Purplish-blue);
+  background-color: hsla(206, 100%, 92%, 0.558);
+  transition: all 0.5s;
+}
+main #step-02 #month-yearly {
+  position: relative;
+  top: 40px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 1rem;
+  color: var(--Marine-blue);
+  border-radius: 8px;
+  background-color: hsla(206, 100%, 92%, 0.422);
+  /* Estilo iOS */
+}
+main #step-02 #month-yearly #yearly {
+  color: var(--Cool-gray);
+}
+main #step-02 #month-yearly .switch__container {
+  margin: 0 25px 0 25px;
+}
+main #step-02 #month-yearly .switch {
+  visibility: hidden;
+  position: absolute;
+  margin-left: -9999px;
+}
+main #step-02 #month-yearly .switch + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+main #step-02 #month-yearly .switch--shadow + label {
+  padding: 2px;
+  width: 45px;
+  height: 25px;
+  background-color: unset;
+  border-radius: 50px;
+}
+main #step-02 #month-yearly .switch--shadow + label:before,
+main #step-02 #month-yearly .switch--shadow + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+main #step-02 #month-yearly .switch--shadow + label:before {
+  right: 1px;
+  background-color: var(--Marine-blue);
+  border-radius: 60px;
+  transition: background 0.4s;
+}
+main #step-02 #month-yearly .switch--shadow + label:after {
+  position: relative;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+  margin: 0 2px 0 2px;
+  background-color: var(--White);
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+}
+main #step-02 #month-yearly .switch--shadow:checked + label:before {
+  background-color: var(--Marine-blue);
+}
+main #step-02 #month-yearly .switch--shadow:checked + label:after {
+  transform: translateX(20px);
+}
 main #step-03 {
   display: none;
+}
+main #step-03 p {
+  margin-bottom: 25px;
+}
+main #step-03 .add-ons {
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  padding: 35px 15px 35px 25px;
+  margin: 10px 0 10px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid var(--Light-gray);
+  border-radius: 8px;
+}
+main #step-03 .add-ons p {
+  margin: 0;
+}
+main #step-03 .add-ons .align-column-ons {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+main #step-03 .add-ons .align-column-ons p {
+  margin: 0;
+}
+main #step-03 .add-ons:hover {
+  border: 1.2px solid var(--Purplish-blue);
+  background-color: hsla(206, 100%, 92%, 0.558);
+  transition: all 0.5s;
 }
 main #step-04 {
   display: none;
 }
+main #step-04 #add-subscription {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 150px;
+  padding: 10px 30px 10px 20px;
+  border-radius: 8px;
+  background-color: hsla(206, 100%, 92%, 0.558);
+}
+main #step-04 #add-subscription strong,
+main #step-04 #add-subscription p,
+main #step-04 #add-subscription a {
+  margin: 0;
+  font-size: 0.8rem;
+}
+main #step-04 #add-subscription .content-subscription {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+main #step-04 #add-subscription .content-subscription #change {
+  display: flex;
+  flex-direction: column;
+}
+main #step-04 #add-subscription .content-subscription strong {
+  font-size: 0.9rem;
+}
+main #step-04 #add-subscription .content-subscription .p-value {
+  color: var(--Marine-blue);
+}
+main #step-04 #tot {
+  width: 93%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  position: relative;
+  top: 25px;
+}
+main #step-04 #tot p {
+  margin: 0;
+}
+main #step-04 #tot h3 {
+  color: var(--Purplish-blue);
+}
 main #step-05 {
   display: none;
+  align-items: center;
+  justify-content: center;
+}
+main #step-05 #img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 30px;
+  background-image: url("/assets/images/icon-thank-you.svg");
+  background-repeat: no-repeat;
+}
+main #step-05 h1 {
+  margin-bottom: 20px;
+}
+main #step-05 p {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
