@@ -93,6 +93,7 @@ main {
     }
 
     .main-step {
+        position: relative;
         width: 450px;
         height: 568px;
         display: flex;
@@ -135,8 +136,8 @@ main {
         }
 
         .main-btt {
-            position: sticky;
-            top: 590px;
+            position: absolute;
+            top: 515px;
             display: flex;
             flex-direction: row;
             background-color: red($color: #000000);
@@ -149,7 +150,7 @@ main {
             }
 
             .btt-next {
-                position: relative;
+                position: absolute;
                 left: 340px;
             }
         }
@@ -195,6 +196,7 @@ main {
         display: none;
 
         #main-plan {
+            position: relative;
             width: 100%;
             display: flex;
             align-items: center;
@@ -204,7 +206,7 @@ main {
             .plan {
                 cursor: pointer;
                 width: 135px;
-                height: 153px;
+                height: auto;
                 display: flex;
                 padding: 15px;
                 border-radius: 8px;
@@ -214,18 +216,33 @@ main {
                 img {
                     width: 40px;
                     height: 40px;
+                    margin-bottom: 43px;
                 }
 
                 strong {
-                    position: relative;
                     top: 45px;
+                    margin-bottom: 5px;
+                    font-size: 1.1rem;
                     color: var(--Marine-blue);
                 }
 
                 p {
-                    position: relative;
                     top: 37px;
-                    font-size: 0.9rem;
+                }
+
+                .no-margin{
+                    font-size: 1rem;
+                    margin-bottom: 0;
+                }
+                .enable{
+                    display: none;
+                }
+                .month-free{
+                    display: none;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                    color: var(--Marine-blue);
                 }
             }
 

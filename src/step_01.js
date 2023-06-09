@@ -14,7 +14,7 @@ let stepOne = {};
     
     'use strict';
     const userData = {
-        name,
+        //name,
     };
 
     function dataValidation(nameUser, userEmail, userPhone) {
