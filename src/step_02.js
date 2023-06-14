@@ -18,21 +18,42 @@ import {
     const step02 = document.querySelector('#step-02');
     const step03 = document.querySelector('#step-03');
 
-
     //Selecionar um dos 3 planos
     const selectPlan = []
     const valuePlan = [];
 
-    function selectionPlan(yearly) {
+
+
+    const istru = function () {
+        //plano anual
+        userData.plan = valuePlan[0].children[1].textContent;
+        //valor do plano
+        userData.value = valuePlan[0].children[3].textContent;
+        console.log(valuePlan[0].children[3].textContent)
+        console.log('chamou')
+
+    }
+
+    const isfalse = function () {
+        //plano
+        userData.plan = valuePlan[0].children[1].textContent;
+        //valor do plano
+        userData.value = valuePlan[0].children[2].textContent;
+        console.log(valuePlan[0].children[2].textContent)
+    }
+
+    function selectionPlan(isfalse) {
         //altera a cor do plano selecionado
         plan.forEach(item => {
             item.addEventListener('click', event => {
+
                 if (selectPlan.length <= 0) {
                     item.style.border = '1px solid hsl(243, 100%, 62%)';
                     item.style.backgroundColor = 'hsla(206, 100%, 92%, 0.558)';
                     selectPlan.unshift(item);
                     valuePlan.unshift(item);
-                } else {
+
+                }else {
                     selectPlan[0].style.border = '1px solid hsl(229, 24%, 87%)';
                     selectPlan[0].style.backgroundColor = 'unset';
                     selectPlan.unshift(item)
@@ -42,41 +63,17 @@ import {
                     valuePlan.unshift(item);
                     valuePlan.pop();
                 }
-
-                function planInformation() {
-                    //plano
-                    userData.plan = valuePlan[0].children[1].textContent;
-                    //valor do plano
-                    userData.value = valuePlan[0].children[2].textContent;
-                    console.log(valuePlan[0].children[2].textContent)
-
-
-                    //verifica se valor é anual
-                    function yearlyTrue () {
-                        
-                        if (yearly === true) {
-                            //plano
-                            userData.plan = valuePlan[0].children[1].textContent;
-                            //valor do plano
-                            userData.value = valuePlan[0].children[3].textContent;
-                            console.log(valuePlan[0].children[3].textContent)
-                            console.log('chamou')
-                        };
-                    }
-                    return yearlyTrue;
-        
-                };
-                planInformation()
-                return planInformation
+                isfalse()
             });
 
         });
 
     };
-    selectionPlan(yearly);
+    selectionPlan(isfalse);
+
 
     //Botão mensal ou anual
-    function monthlyOrYearly(planInformation) {
+    function monthlyOrYearly(istru, isfalse) {
         let yearly = true;
         btt_MonthOrYearl.addEventListener('click', function () {
             //Altera as cores 
@@ -90,8 +87,9 @@ import {
                     enableValueP[i].style.display = 'flex';
                     disableValueP[i].style.display = 'none';
                 };
-                console.log(planInformation())
                 yearly = false;
+                console.log(yearly)
+                istru();
 
             } else if (yearly === false) {
                 colorMonthYear[1].style.color = 'hsl(231, 11%, 63%)';
@@ -104,13 +102,14 @@ import {
                     disableValueP[i].style.display = 'flex';
                 };
                 yearly = true;
-
+                console.log(yearly)
+                isfalse();
             };
-            return yearly
         });
 
     };
-    monthlyOrYearly(selectionPlan);
+    monthlyOrYearly(istru, isfalse);
+
 
     function bttBackNext() {
 
