@@ -110,8 +110,8 @@
 
       </div>
       <div class="main-btt">
-        <button class="btt-back" id="back">Go Back</button>
-        <button class="btt-next" id="next">Next Step</button>
+        <button class="btt-back" >Go Back</button>
+        <button class="btt-next" >Next Step</button>
       </div>
     </section>
 
@@ -159,27 +159,32 @@
     <section class="main-step" id="step-04">
       <h1>Finishing up</h1>
       <p>Double-check everything looks OK before confirming.</p>
-      <div id="add-subscription"><!-- Dynamically add subscription and add-on selections here -->
+      <div id="add-subscription">
+        <!-- Dynamically add subscription and add-on selections here -->
         <div class="content-subscription">
           <div id="change">
-            <strong>Arcade (<span>Yearly</span>)</strong>
+            <strong>Arcade (<span id="span">Yearly</span>)</strong>
             <a href="#">Change</a>
           </div>
-          <strong>$90/yr</strong>
+          <strong id="spanValue">$90/yr</strong>
         </div>
         <hr>
         <div class="content-subscription">
-          <p>Online service</p>
-          <p class="p-value">+$10/yr</p>
+          <p class="p-descript"></p>
+          <p class="p-value"></p>
         </div>
         <div class="content-subscription">
-          <p>Larger storage</p>
-          <p class="p-value">+$20/yr</p>
+          <p class="p-descript"></p>
+          <p class="p-value"></p>
+        </div>
+        <div class="content-subscription">
+          <p class="p-descript"></p>
+          <p class="p-value"></p>
         </div>
       </div>
       <div id="tot">
         <p>Total (per month/year)</p>
-        <h3>$120/yr</h3>
+        <h3 id="h3Tot">$120/yr</h3>
       </div>
       <div class="main-btt">
         <button class="btt-back">Go Back</button>

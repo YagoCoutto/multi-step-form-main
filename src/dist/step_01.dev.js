@@ -73,17 +73,10 @@ exports.userData = userData;
         if (userData[element]) cont++;
       }
 
-      if (cont === 3) {
+      if (cont > 2) {
         step01.style.display = 'none';
         step02.style.display = 'flex';
       }
-    });
-  };
-
-  var back = function back() {
-    bttBack.addEventListener('click', function () {
-      step02.style.display = 'none';
-      step01.style.display = 'flex';
     });
   };
 
@@ -91,12 +84,10 @@ exports.userData = userData;
   var userEmail = document.querySelector('#input-email');
   var userPhone = document.querySelector('#input-cel');
   var spanInvalid = document.querySelectorAll('span');
-  var bttNext = document.querySelector('.btt-next');
-  var bttBack = document.querySelector('#back');
+  var bttNext = document.querySelectorAll('.btt-next')[0];
   var step01 = document.querySelector('#step-01');
   var step02 = document.querySelector('#step-02');
   ;
   next(userData);
-  back();
 }
 ;

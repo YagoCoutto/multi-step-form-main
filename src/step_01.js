@@ -7,8 +7,7 @@ const userData = {};
     const userEmail = document.querySelector('#input-email');
     const userPhone = document.querySelector('#input-cel');
     const spanInvalid = document.querySelectorAll('span');
-    const bttNext = document.querySelector('.btt-next');
-    const bttBack = document.querySelector('#back');
+    const bttNext = document.querySelectorAll('.btt-next')[0];
     const step01 = document.querySelector('#step-01');
     const step02 = document.querySelector('#step-02');
 
@@ -63,7 +62,7 @@ const userData = {};
             for (let element in userData) {
                 if (userData[element]) cont++;
             }
-            if (cont === 3) {
+            if (cont > 2) {
                 step01.style.display = 'none';
                 step02.style.display = 'flex';
             }
@@ -71,13 +70,6 @@ const userData = {};
     }
     next(userData)
 
-    function back() {
-        bttBack.addEventListener('click', function () {
-            step02.style.display = 'none';
-            step01.style.display = 'flex';
-        })
-    }
-    back()
 };
 
 export {

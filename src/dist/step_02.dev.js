@@ -28,8 +28,8 @@ var _step_ = require("/src/step_01.js");
   var colorMonthYear = document.querySelectorAll('.colorMonthYear');
   var disableValueP = document.querySelectorAll('.disable');
   var enableValueP = document.querySelectorAll('.enable');
-  var bttNext = document.querySelector('#next');
-  var bttBack = document.querySelector('#back');
+  var bttNext = document.querySelectorAll('.btt-next')[1];
+  var bttBack = document.querySelectorAll('.btt-back')[0];
   var step01 = document.querySelector('#step-01');
   var step02 = document.querySelector('#step-02');
   var step03 = document.querySelector('#step-03');
@@ -43,7 +43,7 @@ var _step_ = require("/src/step_01.js");
     userData.plan = valuePlan[0].children[1].textContent; //valor do plano
 
     userData.value = valuePlan[0].children[3].textContent;
-    userData.typePlan = 'yearly';
+    userData.typePlan = 'Yearly';
   };
 
   var isfalse = function isfalse(userData) {
@@ -51,7 +51,7 @@ var _step_ = require("/src/step_01.js");
     userData.plan = valuePlan[0].children[1].textContent; //valor do plano
 
     userData.value = valuePlan[0].children[2].textContent;
-    userData.typePlan = 'monthly';
+    userData.typePlan = 'Monthly';
   }; //altera a cor do plano selecionado
 
 
@@ -117,7 +117,7 @@ var _step_ = require("/src/step_01.js");
       console.log(planYears[2].textContent);
     };
 
-    if (_step_.userData.typePlan == 'yearly') {
+    if (_step_.userData.typePlan == 'Yearly') {
       istrue();
     }
   });

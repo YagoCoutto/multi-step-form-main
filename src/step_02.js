@@ -9,8 +9,8 @@ import {
     const colorMonthYear = document.querySelectorAll('.colorMonthYear');
     const disableValueP = document.querySelectorAll('.disable');
     const enableValueP = document.querySelectorAll('.enable');
-    const bttNext = document.querySelector('#next');
-    const bttBack = document.querySelector('#back');
+    const bttNext = document.querySelectorAll('.btt-next')[1];
+    const bttBack = document.querySelectorAll('.btt-back')[0];
     const step01 = document.querySelector('#step-01');
     const step02 = document.querySelector('#step-02');
     const step03 = document.querySelector('#step-03');
@@ -26,7 +26,7 @@ import {
         userData.plan = valuePlan[0].children[1].textContent;
         //valor do plano
         userData.value = valuePlan[0].children[3].textContent;
-        userData.typePlan = 'yearly';
+        userData.typePlan = 'Yearly';
     }
 
     const isfalse = function (userData) {
@@ -34,7 +34,7 @@ import {
         userData.plan = valuePlan[0].children[1].textContent;
         //valor do plano
         userData.value = valuePlan[0].children[2].textContent;
-        userData.typePlan = 'monthly';
+        userData.typePlan = 'Monthly';
     }
 
     //altera a cor do plano selecionado
@@ -99,7 +99,7 @@ import {
             planYears[2].innerHTML = '+$120/yr'
             console.log(planYears[2].textContent)
         }
-        if (userData.typePlan == 'yearly') {
+        if (userData.typePlan == 'Yearly') {
             istrue()
         }
 
