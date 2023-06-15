@@ -14,6 +14,8 @@ import {
     const step01 = document.querySelector('#step-01');
     const step02 = document.querySelector('#step-02');
     const step03 = document.querySelector('#step-03');
+    const planYears = document.querySelectorAll('.planYear');
+
 
     //Selecionar um dos 3 planos
     const selectPlan = []
@@ -91,12 +93,19 @@ import {
             isfalse(userData);
         };
 
-        
-        
-        
+        const istrue = function () {
+            planYears[0].innerHTML = '+$10/yr'
+            planYears[1].innerHTML = '+$20/yr'
+            planYears[2].innerHTML = '+$120/yr'
+            console.log(planYears[2].textContent)
+        }
+        if (userData.typePlan == 'yearly') {
+            istrue()
+        }
+
     });
-    
-    function bttBackNext(userData) {
+
+    function buttons(userData) {
         bttNext.addEventListener("click", function () {
 
             let cont = 0; //verifica se o obj esta vazio
@@ -114,7 +123,9 @@ import {
             step02.style.display = 'none';
             step01.style.display = 'flex';
         })
+
     };
-    bttBackNext(userData);
+    buttons(userData);
+
 
 };

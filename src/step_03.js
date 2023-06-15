@@ -2,33 +2,40 @@ import {
     userData
 } from "/src/step_01.js";
 
+
 const addOns = document.querySelectorAll('.add-ons');
-const planYears = document.querySelectorAll('.planYear');
+const bttNext = document.querySelector('#next');
+const bttBack = document.querySelector('#back');
+const step02 = document.querySelector('#step-02');
+const step03 = document.querySelector('#step-03');
+const step04 = document.querySelector('#step-04');
+
 
 {
-    /*
-        Pensar em uma maneira de verificar a propriedade typePlan depois que ela for efetuada
-    */
-
-    //console.log(userData.typePlan)
-    const istrue = function () {
-        planYears[0].innerHTML = '+$10/yr'
-        planYears[1].innerHTML = '+$20/yr'
-        planYears[2].innerHTML = '+$120/yr'
-        console.log(planYears[2].textContent)
-    }
-    if (userData.typePlan == 'yearly') {
-        istrue()
-    }
-
-
-
     addOns.forEach(item => {
         item.addEventListener('click', function () {
-
-            item.children[0].checked = true;
-            console.log(item.children[0])
+            if (item.children[0].checked === false) {
+                item.children[0].checked = true;
+            } else {
+                item.children[0].checked = false;
+            }
+            console.log(item.children[0].checked)
         })
     })
+
+  /*  bttNext.addEventListener("click", function () {
+        step03.style.display = 'none';
+        step04.style.display = 'flex';
+
+    });*/
+    console.log(bttBack)
+
+    bttBack.addEventListener('click', function () {
+        step03.style.display = 'none';
+        step02.style.display = 'flex';
+    })
+
+
+
 
 }

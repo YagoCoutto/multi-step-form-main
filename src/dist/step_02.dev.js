@@ -3,7 +3,7 @@
 var _step_ = require("/src/step_01.js");
 
 {
-  var bttBackNext = function bttBackNext(userData) {
+  var buttons = function buttons(userData) {
     bttNext.addEventListener("click", function () {
       var cont = 0; //verifica se o obj esta vazio
 
@@ -32,7 +32,8 @@ var _step_ = require("/src/step_01.js");
   var bttBack = document.querySelector('#back');
   var step01 = document.querySelector('#step-01');
   var step02 = document.querySelector('#step-02');
-  var step03 = document.querySelector('#step-03'); //Selecionar um dos 3 planos
+  var step03 = document.querySelector('#step-03');
+  var planYears = document.querySelectorAll('.planYear'); //Selecionar um dos 3 planos
 
   var selectPlan = [];
   var valuePlan = [];
@@ -108,8 +109,19 @@ var _step_ = require("/src/step_01.js");
     }
 
     ;
+
+    var istrue = function istrue() {
+      planYears[0].innerHTML = '+$10/yr';
+      planYears[1].innerHTML = '+$20/yr';
+      planYears[2].innerHTML = '+$120/yr';
+      console.log(planYears[2].textContent);
+    };
+
+    if (_step_.userData.typePlan == 'yearly') {
+      istrue();
+    }
   });
   ;
-  bttBackNext(_step_.userData);
+  buttons(_step_.userData);
 }
 ;

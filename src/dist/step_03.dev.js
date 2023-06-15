@@ -3,27 +3,31 @@
 var _step_ = require("/src/step_01.js");
 
 var addOns = document.querySelectorAll('.add-ons');
-var planYears = document.querySelectorAll('.planYear');
+var bttNext = document.querySelector('#next');
+var bttBack = document.querySelector('#back');
+var step02 = document.querySelector('#step-02');
+var step03 = document.querySelector('#step-03');
+var step04 = document.querySelector('#step-04');
 {
-  /*
-      Pensar em uma maneira de verificar a propriedade typePlan depois que ela for efetuada
-  */
-  //console.log(userData.typePlan)
-  var istrue = function istrue() {
-    planYears[0].innerHTML = '+$10/yr';
-    planYears[1].innerHTML = '+$20/yr';
-    planYears[2].innerHTML = '+$120/yr';
-    console.log(planYears[2].textContent);
-  };
-
-  if (_step_.userData.typePlan == 'yearly') {
-    istrue();
-  }
-
   addOns.forEach(function (item) {
     item.addEventListener('click', function () {
-      item.children[0].checked = true;
-      console.log(item.children[0]);
+      if (item.children[0].checked === false) {
+        item.children[0].checked = true;
+      } else {
+        item.children[0].checked = false;
+      }
+
+      console.log(item.children[0].checked);
     });
+  });
+  /*  bttNext.addEventListener("click", function () {
+        step03.style.display = 'none';
+        step04.style.display = 'flex';
+      });*/
+
+  console.log(bttBack);
+  bttBack.addEventListener('click', function () {
+    step03.style.display = 'none';
+    step02.style.display = 'flex';
   });
 }
